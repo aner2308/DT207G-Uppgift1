@@ -71,6 +71,20 @@ app.post("/delete-course", async (req, res) => {
     }
 });
 
+// Routing för undersidor
+app.get("/startsida", async (req, res) => {
+    res.render("startsida");
+});
+
+app.get("/index", async (req, res) => {
+    res.render("index");
+});
+
+app.get("/omsidan", async (req, res) => {
+    res.render("omsidan");
+});
+
+
 //Starta servern
 app.listen(process.env.PORT, () => {
     console.log("Servern startad på port: " + process.env.PORT);

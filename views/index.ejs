@@ -7,9 +7,18 @@
     <title>Startsida</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
+<header>
+    <div class="header">
+        <a href="/startsida" class="sidbeskrivning">Registrera Kurser</a>
+        <div class="header-right">
+          <a href="/startsida">Startsida</a>
+          <a class="active" href="/">Lägg till kurs</a>
+          <a href="/omsidan">Om sidan</a>
+        </div>
+      </div>
+</header>
 <body>
-    <h1>Lägg till kurs</h1>
+    <h2>Lägg till kurs</h2>
     <form id="courseForm" method="post" action="/">
         <label for="courseCode">Kurskod:</label><br>
         <input type="text" name="courseCode" id="courseCode" required>
