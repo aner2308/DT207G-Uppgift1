@@ -41,7 +41,7 @@ app.get("/", async (req, res) => {
     })
 });
 
-app.post("/", async (req, res) => {
+app.post("/form", async (req, res) => {
     const courseCodeEl = req.body.courseCode;
     const courseNameEl = req.body.courseName;
     const progressionEl = req.body.progression;
@@ -52,7 +52,7 @@ app.post("/", async (req, res) => {
         [courseCodeEl, courseNameEl, courseUrlEl, progressionEl]
     );
 
-    res.redirect("/");
+    res.redirect("/form");
 });
 
 // Routing för att radera en kurs
@@ -72,11 +72,11 @@ app.post("/delete-course", async (req, res) => {
 });
 
 // Routing för undersidor
-app.get("/startsida", async (req, res) => {
-    res.render("startsida");
+app.get("/form", async (req, res) => {
+    res.render("form");
 });
 
-app.get("/index", async (req, res) => {
+app.get("/", async (req, res) => {
     res.render("index");
 });
 

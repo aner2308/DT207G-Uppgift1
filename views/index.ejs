@@ -9,37 +9,18 @@
 </head>
 <header>
     <div class="header">
-        <a href="/startsida" class="sidbeskrivning">Registrera Kurser</a>
+        <a href="/" class="sidbeskrivning">Mina Kurser</a>
         <div class="header-right">
-          <a href="/startsida">Startsida</a>
-          <a class="active" href="/">Lägg till kurs</a>
+          <a href="/form">Lägg till kurs</a>
+          <a class="active" href="/">Startsidan</a>
           <a href="/omsidan">Om sidan</a>
         </div>
       </div>
 </header>
 <body>
-    <h2>Lägg till kurs</h2>
-    <form id="courseForm" method="post" action="/">
-        <label for="courseCode">Kurskod:</label><br>
-        <input type="text" name="courseCode" id="courseCode" required>
-        <br><br>
-        <label for="courseName">Kursnamn:</label><br>
-        <input type="text" name="courseName" id="courseName" required>
-        <br><br>
-        <label for="progression">Progression</label>
-        <select name="progression" id="progression">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-        </select>
-        <br><br>
-        <label for="courseUrl">Kurs-URL:</label><br>
-        <input type="url" id="courseUrl" name="courseUrl" required>
-        <br><br>
-        <button type="submit">Spara kursinformationen</button>
-    </form>
 
-    <h2>Redan tillagda kurser</h2>
+    <h1>Välkommen till startsidan</h1>
+    <p>Här kan du läsa om dina kurser</p>
 
     <% courses.forEach((course)=> { %>
         <ul>
@@ -57,7 +38,7 @@
             </li>
             <form method="post" action="/delete-course">
                 <input type="hidden" name="courseId" value="<%= course.id %>">
-                <button type="submit">Radera</button>
+                <button id="deleteBtn" type="submit">Radera</button>
             </form>
         </ul>
         <% }); %>
