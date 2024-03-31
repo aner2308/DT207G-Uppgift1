@@ -30,7 +30,7 @@ client.connect((err) => {
 //Routing
 app.get("/", async (req, res) => {
     //Läs ut från databasen
-    client.query("SELECT * FROM courses ORDER BY code DESC", (err, result) => {
+    client.query("SELECT * FROM courses ORDER BY id DESC", (err, result) => {
         if (err) {
             console.log("Fel vid db-fråga");
         } else {
@@ -53,6 +53,22 @@ app.post("/", async (req, res) => {
     );
 
     res.redirect("/");
+});
+
+// Routing för att radera en kurs
+app.post("/delete-course", async (req, res) => {
+    const courseId = req.body.courseId;
+
+    try {
+        // Ta bort kursen från databasen
+        await client.query("DELETE FROM courses WHERE id = $1", [courseId]);
+
+        // Skicka tillbaka en bekräftelse
+        res.redirect("/");
+    } catch (error) {
+        console.error("Fel vid radering av kurs:", error);
+        res.status(500).send("Något gick fel vid radering av kursen.");
+    }
 });
 
 //Starta servern

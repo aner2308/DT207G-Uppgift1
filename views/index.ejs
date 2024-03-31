@@ -46,6 +46,10 @@
             <li>
                 URL: <%= course.syllabus %>
             </li>
+            <form method="post" action="/delete-course">
+                <input type="hidden" name="courseId" value="<%= course.id %>">
+                <button type="submit">Radera</button>
+            </form>
         </ul>
         <% }); %>
 </body>
