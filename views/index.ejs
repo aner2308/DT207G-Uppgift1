@@ -9,18 +9,19 @@
 </head>
 <header>
     <div class="header">
-        <a href="/" class="sidbeskrivning">Mina Kurser</a>
+        <a href="/" class="sidbeskrivning">Startsidan</a>
         <div class="header-right">
-          <a href="/form">Lägg till kurs</a>
-          <a class="active" href="/">Startsidan</a>
-          <a href="/omsidan">Om sidan</a>
+            <a href="/form" class="notActive">Lägg till kurs</a>
+            <a class="active" href="/">Startsidan</a>
+            <a href="/omsidan" class="notActive">Om sidan</a>
         </div>
-      </div>
+    </div>
 </header>
+
 <body>
 
     <h1>Välkommen till startsidan</h1>
-    <p>Här kan du läsa om dina kurser</p>
+    <p class="brödtext">Här kan du läsa om dina kurser</p>
 
     <% courses.forEach((course)=> { %>
         <ul>
@@ -34,7 +35,7 @@
                 Progression: <%= course.progression %>
             </li>
             <li>
-                URL: <%= course.syllabus %>
+                URL: <a href="<%= course.syllabus %>">Klicka här</a>
             </li>
             <form method="post" action="/delete-course">
                 <input type="hidden" name="courseId" value="<%= course.id %>">
@@ -42,6 +43,10 @@
             </form>
         </ul>
         <% }); %>
+
+            <footer>
+                <p class="brödtext">Anton Eriksson, Uppgift 1, DT207G</p>
+            </footer>
 </body>
 
 </html>

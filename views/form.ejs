@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startsida</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Startsida</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <header>
-    <div class="header">
-        <a href="/form" class="sidbeskrivning">Mina Kurser</a>
-        <div class="header-right">
-          <a class="active" href="/form">Lägg till kurs</a>
-          <a href="/">Startsidan</a>
-          <a href="/omsidan">Om sidan</a>
-        </div>
-      </div>
+  <div class="header">
+    <a href="/form" class="sidbeskrivning">Lägg till kurs</a>
+    <div class="header-right">
+      <a class="active" href="/form">Lägg till kurs</a>
+      <a href="/" class="notActive">Startsidan</a>
+      <a href="/omsidan" class="notActive">Om sidan</a>
+    </div>
+  </div>
 </header>
+
 <body>
-  <h2>Lägg till kurs</h2>
+  <h1>Lägg till kurs</h1>
   <form id="courseForm" method="post" action="/form">
-      <label for="courseCode">Kurskod:</label><br>
-      <input type="text" name="courseCode" id="courseCode" required>
-      <br><br>
-      <label for="courseName">Kursnamn:</label><br>
-      <input type="text" name="courseName" id="courseName" required>
-      <br><br>
-      <label for="progression">Progression</label>
-      <select name="progression" id="progression">
-          <option value="A">A</option>
-          <option value="B">B</option>
-          <option value="C">C</option>
-      </select>
-      <br><br>
-      <label for="courseUrl">Kurs-URL:</label><br>
-      <input type="url" id="courseUrl" name="courseUrl" required>
-      <br><br>
-      <button type="submit">Spara kursinformationen</button>
+    <label for="courseCode">Kurskod:</label><br>
+    <input type="text" name="courseCode" id="courseCode" required>
+    <br><br>
+    <label for="courseName">Kursnamn:</label><br>
+    <input type="text" name="courseName" id="courseName" required>
+    <br><br>
+    <label for="progression">Progression</label>
+    <select name="progression" id="progression">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+    <br><br>
+    <label for="courseUrl">Kurs-URL:</label><br>
+    <input type="url" id="courseUrl" name="courseUrl" required>
+    <br><br>
+    <button type="submit">Spara kursinformationen</button>
   </form>
+
+  <footer>
+    <p class="brödtext">Anton Eriksson, Uppgift 1, DT207G</p>
+  </footer>
 </body>
+
 </html>

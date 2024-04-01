@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om sidan</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om sidan</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <header>
-    <div class="header">
-        <a href="/omsidan" class="sidbeskrivning">Om Webbsidan</a>
-        <div class="header-right">
-          <a href="/form">Lägg till kurs</a>
-          <a href="/">Startsidan</a>
-          <a class="active" href="/omsidan">Om sidan</a>
-        </div>
-      </div>
+  <div class="header">
+    <a href="/omsidan" class="sidbeskrivning">Om sidan</a>
+    <div class="header-right">
+      <a href="/form" class="notActive">Lägg till kurs</a>
+      <a href="/" class="notActive">Startsidan</a>
+      <a class="active" href="/omsidan">Om sidan</a>
+    </div>
+  </div>
 </header>
+
 <body>
-    <h1>Om sidan</h1>
-    <p>Information om webbsidan.</p>
+  <h1>Om sidan</h1>
+  <p id="about">
+    Denna webbsida är skapad för uppgift 1 i kursen DT207G, Datateknik GR (B), Backend-baserad webbutveckling.
+    Webbsidans syfte är att ge användaren möjlighet att genom ett formulär lagra sina kurser i en databas. De lagrade
+    kurserna skrivs också ut på startsidan så man enkelt kan se vad som är lagrat. Om man vill radera en lagrad kurs så
+    kan man trycka på "radera"-knappen för just den kursen. Då försvinner den både från webbsidan och från databasen.
+    <br>
+    <br>
+    Mitt val av databas-server blev postgreSQL. Det är en databastyp som jag inte använt tidigare. Jag valde den både
+    för att testa något nytt, samt för att jag vet att den går att publicera med hjälp av Render (som jag för övrigt
+    heller aldrig använt tidigare.).
+    <br>
+    <br>
+    Uppgiften har varit väldigt lärorik. Att länka ihop en databas med en webbsida är något som jag aldrig gjort
+    tidigare. Med lite teoretisk läsning, videodemonstrationer från lärarna samt experimentering så gick det ändå bättre
+    än väntat. Min kod känns läsbar i mina egna ögon och jag förstår ändå hur allt hänger ihop. Men med det sagt så
+    kommer det krävas en del mängdträning innan det känns naturligt. Det var också intressant att se att även min meny
+    var tvungen att utformas på ett nytt sätt. Det tog lite längre tid än jag tänkt mig att få till då det var ett
+    främmande arbetssätt.
+  </p>
+
+  <footer>
+    <p class="brödtext">Anton Eriksson, Uppgift 1, DT207G</p>
+  </footer>
 </body>
+
 </html>
