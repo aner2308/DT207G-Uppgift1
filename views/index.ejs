@@ -7,41 +7,42 @@
     <title>Startsida</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<header>
-    <div class="header">
-        <a href="/" class="sidbeskrivning">Startsidan</a>
-        <div class="header-right">
-            <a href="/form" class="notActive">Lägg till kurs</a>
-            <a class="active" href="/">Startsidan</a>
-            <a href="/omsidan" class="notActive">Om sidan</a>
-        </div>
-    </div>
-</header>
+
 
 <body>
+
+    <header>
+        <div class="header">
+            <a href="/" class="sidbeskrivning">Startsidan</a>
+            <div class="header-right">
+                <a href="/form" class="notActive">Lägg till kurs</a>
+                <a class="active" href="/">Startsidan</a>
+                <a href="/omsidan" class="notActive">Om sidan</a>
+            </div>
+        </div>
+    </header>
 
     <h1>Välkommen till startsidan</h1>
     <p class="brödtext">Här kan du läsa om dina kurser</p>
 
     <% courses.forEach((course)=> { %>
-        <ul>
-            <li>
-                Kurskod: <%= course.code %>
-            </li>
-            <li>
+        <article>
+
+            Kurskod: <%= course.code %>
+                <br>
                 Kursnamn: <%= course.coursename %>
-            </li>
-            <li>
-                Progression: <%= course.progression %>
-            </li>
-            <li>
-                URL: <a href="<%= course.syllabus %>">Klicka här</a>
-            </li>
-            <form method="post" action="/delete-course">
-                <input type="hidden" name="courseId" value="<%= course.id %>">
-                <button id="deleteBtn" type="submit">Radera</button>
-            </form>
-        </ul>
+                    <br>
+                    Progression: <%= course.progression %>
+                        <br>
+                        URL: <a href="<%= course.syllabus %>">Klicka här</a>
+                        <br>
+                        <br>
+
+                        <form method="post" action="/delete-course">
+                            <input type="hidden" name="courseId" value="<%= course.id %>">
+                            <button class="deleteBtn" type="submit">Radera</button>
+                        </form>
+        </article>
         <% }); %>
 
             <footer>
